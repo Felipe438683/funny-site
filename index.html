@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Bora sair hoje?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url("funny-animal-picture-plsdaitzn829vi2m.webp");
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+      margin-top: 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      font-size: 18px;
+      margin: 10px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffffffcc;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #fff;
+    }
+
+    #nao {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bora sair hoje?</h1>
+  <button class="btn" onclick="alert('Fechou! 😎')">Sim</button>
+  <button class="btn" id="nao">Não</button>
+
+  <script>
+    const botaoNao = document.getElementById('nao');
+
+    botaoNao.addEventListener('mouseenter', () => {
+      const larguraJanela = window.innerWidth - 100;
+      const alturaJanela = window.innerHeight - 50;
+
+      const novaPosicaoX = Math.random() * larguraJanela;
+      const novaPosicaoY = Math.random() * alturaJanela;
+
+      botaoNao.style.left = `${novaPosicaoX}px`;
+      botaoNao.style.top = `${novaPosicaoY}px`;
+    });
+  </script>
+</body>
+</html>
